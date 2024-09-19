@@ -6,7 +6,9 @@ import java.util.Map;
 
 public class Tienda{
     private Map<Integer, Integer> productos;
-    private Agente agente;
+    private Agente agenteAdvertencia;
+    private Agente agenteLog;
+
 
     public Tienda() {
         productos = new HashMap<>();
@@ -35,12 +37,6 @@ public class Tienda{
         }
     }
 
-    private void verificarStock(Producto producto){
-        int cantidad = productos.get(producto);
-        if(cantidad < 5){
-            
-        }
-    }
 
     public int getCantidadStock(Producto producto){
         int ID = producto.getID();
@@ -51,6 +47,8 @@ public class Tienda{
         return 0;
         
     }
+
+
 
 
 }

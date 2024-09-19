@@ -59,9 +59,14 @@ class ParcialApplicationTests {
 	@Test
 	void getCantidadStockCorrecto(){
 		Producto p1 = new Producto(001 ,"Jugo", 1000, 0, "Bebidas");
-		tienda.reducirProductoAlStock(p1);
-		assertEquals(1, 1);
+		tienda.añadirProductoAlStock(p1);
+		assertEquals(1, tienda.getCantidadStock(p1));
 	}
 
+	@Test
+	void getCantidadStockEnCasoNoExiste(){
+		Producto p1 = new Producto(001 ,"Jugo", 1000, 0, "Bebidas");
+		assertEquals(0, tienda.getCantidadStock(p1));
+	}
 
 }
